@@ -76,7 +76,7 @@ const Navbar = () => {
 
         {/* ✅ Admin Login Button */}
         <a
-          href='https://prescripto-admin.vercel.app'
+          href='https://prescripto-dehwo2m7q-ijjimadhu-venkats-projects.vercel.app/'
           target='_blank'
           rel='noopener noreferrer'
           className='bg-gray-200 text-gray-800 px-6 py-3 rounded-full font-light hidden md:block hover:bg-gray-300 transition-all'
@@ -122,7 +122,7 @@ const Navbar = () => {
 
             {/* ✅ Mobile admin button */}
             <a
-              href='https://prescripto-admin.vercel.app'
+              href='https://prescripto-dehwo2m7q-ijjimadhu-venkats-projects.vercel.app/'
               target='_blank'
               rel='noopener noreferrer'
               onClick={() => setShowMenu(false)}
