@@ -22,7 +22,7 @@ const DoctorsList = () => {
             className='border border-indigo-200 rounded-xl overflow-hidden cursor-pointer group transition-all hover:shadow-md'
           >
             <img
-              className='bg-indigo-50 group-hover:bg-[#5f6FFF] transition-all duration-500 w-full h-40 object-cover'
+              className='bg-indigo-50 group-hover:bg-[#0D9488] transition-all duration-500 w-full h-40 object-cover'
               src={item.image}
               alt={item.name}
             />

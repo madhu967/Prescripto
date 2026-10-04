@@ -48,7 +48,7 @@ const DoctorProfile = () => {
 
       <div className='flex flex-col gap-4 m-5'>
         <div>
-          <img className='bg-[#5f6FFF] w-full sm:max-w-64 rounded-lg' src={profileData.image} alt="" />
+          <img className='bg-[#0D9488] w-full sm:max-w-64 rounded-lg' src={profileData.image} alt="" />
         </div>
 
         <div className='flex-1 border border-stone-100 rounded-lg px-8 py-7 bg-white'>

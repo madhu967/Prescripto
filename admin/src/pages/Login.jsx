@@ -56,7 +56,7 @@ const Login = () => {
     >
       <div className="flex flex-col gap-3 m-auto items-start p-8 min-w-[340px] sm:min-w-96 border rounded-xl text-[#5E5E5E] text-sm shadow-lg">
         <p className="text-2xl font-semibold m-auto">
-          <span className="text-[#5f6FFF]">{state} </span> Login
+          <span className="text-[#0D9488]">{state} </span> Login
         </p>
         <div className="w-full">
           <p>Email</p>
@@ -78,14 +78,14 @@ const Login = () => {
             required
           />
         </div>
-        <button className="bg-[#5f6FFF] text-white w-full py-2 rounded-md text-base">
+        <button className="bg-[#0D9488] text-white w-full py-2 rounded-md text-base">
           Login
         </button>
         {state === "Admin" ? (
           <p>
             Doctor Login?
             <span
-              className="text-[#5f6FFF] underline cursor-pointer"
+              className="text-[#0D9488] underline cursor-pointer"
               onClick={() => setState("Doctor")}
             >
               Click here
@@ -95,7 +95,7 @@ const Login = () => {
           <p>
             Admin Login?{" "}
             <span
-              className="text-[#5f6FFF] underline cursor-pointer"
+              className="text-[#0D9488] underline cursor-pointer"
               onClick={() => setState("Admin")}
             >
               Click here
