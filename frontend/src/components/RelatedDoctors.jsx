@@ -24,13 +24,13 @@ const RelatedDoctors = ({docId,speciality}) => {
             {
                 relDoc.slice(0,5).map((item,index)=>(
                    <div onClick={()=>{navigate(`/appointment/${item._id}`); scrollTo(0,0)}} key={index} className='border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-10px] transition-all duration-300'>
-                      <img className='bg-blue-50' src={item.image} alt="" />
+                      <img className='w-full h-48 sm:h-40 md:h-44 lg:h-48 object-cover bg-blue-50' src={item.image} alt="" />
                       <div className='p-4'>
                         <div className={`flex items-center gap-2 text-sm text-center ${item.available? 'text-gray-500':'text-red-500'} `}>
                             <p className={`w-2 h-2 ${item.available ? 'bg-green-500 ':'bg-red-500'} rounded-full `}></p><p>{item.available? 'Available':'Not Available'}</p>
                         </div>
-                        <p className='text-gray-900 text-lg font-medium'>{item.name}</p>
-                        <p className='text-gray-600 text-sm'>{item.speciality}</p>
+                        <p className='text-gray-900 text-lg font-medium truncate'>{item.name}</p>
+                        <p className='text-gray-600 text-sm truncate'>{item.speciality}</p>
                       </div>
                     </div>
                 ))
