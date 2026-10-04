@@ -90,7 +90,7 @@ const allDoctors =async (req,res)=>{
 
     try {
         
-        const doctors =await doctorModel.find({}).select('-password');
+        const doctors = await doctorModel.find({}).sort({ date: -1, _id: -1 }).select('-password');
         res.json({success:true, doctors});
 
     } catch (error) {

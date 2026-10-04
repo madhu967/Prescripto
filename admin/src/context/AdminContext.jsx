@@ -20,8 +20,14 @@ const AdminContextProvider =(props)=>{
             
             const {data} =await axios.post(backendUrl + '/api/admin/all-doctors',{},{headers:{atoken}});
             if(data.success){
-                setDoctors(data.doctors);
-                console.log(data.doctors);
+                const sortedDoctors = [...data.doctors].sort((a, b) => {
+                    const dateB = Number(b.date) || 0;
+                    const dateA = Number(a.date) || 0;
+                    if (dateB !== dateA) return dateB - dateA;
+                    return String(b._id || '').localeCompare(String(a._id || ''));
+                });
+                setDoctors(sortedDoctors);
+                console.log(sortedDoctors);
             }
             else{
                 toast.error(data.message);

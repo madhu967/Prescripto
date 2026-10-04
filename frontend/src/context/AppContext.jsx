@@ -20,7 +20,13 @@ const AppContextProvider=(props)=>{
             
             const {data}=await axios.get(backendUrl+'/api/doctor/list');
             if(data.success){
-              setDoctors(data.doctors);
+              const sortedDoctors = [...data.doctors].sort((a, b) => {
+                const dateB = Number(b.date) || 0;
+                const dateA = Number(a.date) || 0;
+                if (dateB !== dateA) return dateB - dateA;
+                return String(b._id || '').localeCompare(String(a._id || ''));
+              });
+              setDoctors(sortedDoctors);
             }
         } catch (error) {
             console.log(error);
