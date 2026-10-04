@@ -10,8 +10,26 @@
     --color-primary: #0D9488;
 }
 
+body {
+    font-family: 'Playfair Display', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color: #1e293b;
+    background-color: #ffffff;
+}
+
 * {
     font-family: 'Playfair Display', serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: #0D9488;
+    color: #ffffff;
 }
 
 .active hr{
@@ -19,5 +37,5 @@
 }
 
 ::-webkit-scrollbar{
-    @apply hidden
+    @apply hidden;
 }

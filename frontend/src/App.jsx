@@ -10,27 +10,26 @@ import MyAppointments from './pages/MyAppointments'
 import Appointment from './pages/Appointment'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import {ToastContainer ,toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => {
   return (
-    <div className='mx-4 sm:mx-[10%]'>
-      <ToastContainer></ToastContainer>
-      <Navbar></Navbar>
-       
-       <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/doctors' element={<Doctors></Doctors>}></Route>
-        <Route path='/doctors/:speciality' element={<Doctors></Doctors>}></Route>
-        <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/about' element={<About></About>}></Route>
-        <Route path='/contact' element={<Contact></Contact>}></Route>
-        <Route path='/my-profile' element={<MyProfile></MyProfile>}></Route>
-        <Route path='/my-appointments' element={<MyAppointments></MyAppointments>}></Route>
-        <Route path='/appointment/:docId' element={<Appointment></Appointment>}></Route>
-       </Routes>
-       <Footer></Footer>
+    <div className='min-h-screen bg-white text-gray-800 antialiased max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <ToastContainer position='top-right' autoClose={3000} />
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/doctors' element={<Doctors />} />
+        <Route path='/doctors/:speciality' element={<Doctors />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/my-profile' element={<MyProfile />} />
+        <Route path='/my-appointments' element={<MyAppointments />} />
+        <Route path='/appointment/:docId' element={<Appointment />} />
+      </Routes>
+      <Footer />
     </div>
   )
 }

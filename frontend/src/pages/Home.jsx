@@ -6,12 +6,12 @@ import Banner from '../components/Banner'
 
 const Home = () => {
   return (
-    <div>
-      <Header></Header>
-      <SpecialityMenu></SpecialityMenu>
-      <TopDoctors></TopDoctors>
-      <Banner></Banner>
-    </div>
+    <main>
+      <Header />
+      <SpecialityMenu />
+      <TopDoctors />
+      <Banner />
+    </main>
   )
 }
 
