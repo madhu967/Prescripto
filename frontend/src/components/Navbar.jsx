@@ -142,7 +142,7 @@ const Navbar = () => {
 
           {/* Admin Login Button */}
           <a
-            href='https://prescripto-dehwo2m7q-ijjimadhu-venkats-projects.vercel.app/'
+            href='https://prescripto-zajb.vercel.app/'
             target='_blank'
             rel='noopener noreferrer'
             className='border border-gray-200 hover:border-[#0D9488] text-gray-700 hover:text-[#0D9488] bg-white px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all shadow-2xs hover:shadow-sm hidden md:inline-flex items-center gap-1.5'
@@ -236,7 +236,7 @@ const Navbar = () => {
               </button>
             )}
             <a
-              href='https://prescripto-dehwo2m7q-ijjimadhu-venkats-projects.vercel.app/'
+              href='https://prescripto-zajb.vercel.app/'
               target='_blank'
               rel='noopener noreferrer'
               onClick={() => setShowMenu(false)}
