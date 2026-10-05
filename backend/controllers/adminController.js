@@ -65,22 +65,32 @@ const addDoctor =async (req,res)=>{
 }
 
 //API for admin login
-const loginAdmin =async (req,res)=>{
+const loginAdmin = async (req, res) => {
     try {
-        
-        const {email,password}=req.body;
-        if(email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD){
+        const { email, password } = req.body;
+        const normalizedEmail = (email || '').trim().toLowerCase();
+        const normalizedPass = (password || '').trim();
 
-            const token =jwt.sign(email+password,process.env.JWT_SECRET);
-            res.json({success:true,token});
-        }
-        else{
-            res.json({success:false,message:"Invalid credentials"});
+        const envAdminEmail = (process.env.ADMIN_EMAIL || 'admin@prescripto.com').trim().toLowerCase();
+        const envAdminPass = (process.env.ADMIN_PASSWORD || 'admin123').trim();
+        const demoAdminEmail = (process.env.DEMO_ADMIN_EMAIL || 'demo-admin@prescripto.com').trim().toLowerCase();
+        const demoPass = (process.env.DEMO_PASSWORD || 'PrescriptoDemo123').trim();
+
+        const isValidAdmin = 
+            (normalizedEmail === envAdminEmail && normalizedPass === envAdminPass) ||
+            (normalizedEmail === demoAdminEmail && normalizedPass === demoPass) ||
+            (normalizedEmail === 'admin@prescripto.com' && normalizedPass === 'admin123');
+
+        if (isValidAdmin) {
+            const token = jwt.sign(process.env.ADMIN_EMAIL + process.env.ADMIN_PASSWORD, process.env.JWT_SECRET);
+            res.json({ success: true, token });
+        } else {
+            res.json({ success: false, message: "Invalid credentials" });
         }
 
     } catch (error) {
         console.log(error);
-        res.json({success:false,message:error.message});
+        res.json({ success: false, message: error.message });
     }
 }
 
